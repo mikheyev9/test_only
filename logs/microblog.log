@@ -1,0 +1,64 @@
+2023-01-11 11:29:23,148 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-11 11:30:08,342 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-11 11:33:07,116 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-11 11:33:34,606 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-11 12:07:16,488 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-11 12:07:38,059 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-11 12:08:34,437 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-11 12:11:58,427 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-11 12:13:24,249 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:44]
+2023-01-26 19:35:18,708 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:47]
+2023-02-02 21:20:25,633 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:57]
+2023-02-05 17:09:06,949 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:57]
+2023-02-05 17:09:25,484 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:57]
+2023-02-08 18:25:53,292 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:57]
+2023-02-08 18:26:44,942 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:57]
+2023-02-17 14:20:13,211 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:80]
+2023-02-17 14:20:35,406 ERROR: Exception on / [GET] [in /home/anton/env/env/lib/python3.10/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/anton/env/env/project/app/main/routes.py", line 46, in index
+    return render_template('index.html', title=_('Home'), form=form,
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/anton/env/env/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/anton/env/env/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/anton/env/env/project/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/anton/env/env/project/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/home/anton/env/env/project/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/home/anton/env/env/project/app/templates/index.html", line 10, in block 'app_content'
+    {% include '_post.html' %}
+  File "/home/anton/env/env/project/app/templates/_post.html", line 4, in top-level template code
+    <a href="{{ url_for('user', username=post.author.username) }}">
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask/app.py", line 2031, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/home/anton/env/env/lib/python3.10/site-packages/flask/app.py", line 2020, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/home/anton/env/env/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
+2023-02-17 15:03:13,046 INFO: Microblog startup [in /home/anton/env/env/project/app/__init__.py:80]
